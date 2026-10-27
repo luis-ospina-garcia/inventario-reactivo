@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: inventario-reactivo
+  r2dbc:
+    url: ${R2DBC_URL:r2dbc:postgresql://localhost:5433/inventario}
+    username: ${DB_USER:inventario}
+    password: ${DB_PASSWORD:inventario}
+  flyway:
+    # Flyway usa JDBC; la aplicación en sí usa R2DBC
+    url: ${FLYWAY_URL:jdbc:postgresql://localhost:5433/inventario}
+    user: ${DB_USER:inventario}
+    password: ${DB_PASSWORD:inventario}
+
+server:
+  port: 8080

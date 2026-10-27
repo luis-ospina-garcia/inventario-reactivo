@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: inventario-reactivo-test
+  r2dbc:
+    # Misma base en memoria para R2DBC (la app) y JDBC (Flyway); opciones idénticas en ambas URLs
+    url: r2dbc:h2:mem:///inventario?options=DB_CLOSE_DELAY=-1;MODE=PostgreSQL;LOCK_TIMEOUT=10000
+    username: sa
+    password: ""
+  flyway:
+    url: jdbc:h2:mem:inventario;DB_CLOSE_DELAY=-1;MODE=PostgreSQL;LOCK_TIMEOUT=10000
+    user: sa
+    password: ""
